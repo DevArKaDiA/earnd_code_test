@@ -1,0 +1,37 @@
+# archivos y carpetas específicos del entorno virtual de Python (ejemplo: venv, virtualenv, env)
+venv/
+ENV/
+
+# archivos de registro y copias de seguridad
+*.log
+*.swp
+*.bak
+*.pyc
+
+# archivo de configuración local
+instance/config.py
+
+# directorio de archivos estáticos compilados
+static/gen/
+
+# directorio de dependencias de JavaScript
+node_modules/
+
+# archivo de credenciales
+credentials.json
+
+# archivo de configuración de IDE
+.idea/
+
+# archivo de caché de pytest
+.cache/
+
+# archivo de resultados de pruebas de pytest
+.pytest_cache/
+
+# otros archivos y directorios innecesarios
+__pycache__/
+dist/
+build/
+.mypy_cache
+*.egg-info/
