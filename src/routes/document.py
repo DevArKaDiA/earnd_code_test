@@ -1,8 +1,7 @@
 from typing import Optional
-from flask import Response, request, Blueprint
+from flask import request, Blueprint
 from models import document
 from service import document_service
-import http
 
 document_blueprint = Blueprint("documents", __name__)
 
