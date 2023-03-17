@@ -23,7 +23,8 @@ db = DB(
                             text="Prueba Earnd subtitle",
                             sections={
                                 "SubSub_Titulo": document.Document(
-                                    name="SubSub_Titulo", text="Hola Mundo", sections={}
+                                    name="SubSub_Titulo",
+                                    text="Hola Mundo",
                                 )
                             },
                         ),
