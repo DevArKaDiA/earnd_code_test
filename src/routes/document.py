@@ -21,7 +21,7 @@ class CreateDocumentSectionInput(BaseModel):
 
 
 class GetDocumentSectionInput(BaseModel):
-    path: Optional[str]
+    path: Optional[str] = None
 
 
 class GetDocumentSectionsResponse(BaseModel):
@@ -53,8 +53,11 @@ def get_documents():
 
 @document_blueprint.route("/<document_name>/sections/", methods=["GET"])
 def get_document_sections(document_name: str):
-    input = GetDocumentSectionInput.parse_obj(request.json)
-    print(input)
+    input = (
+        GetDocumentSectionInput.parse_obj(request.get_json(silent=True))
+        if request.get_json(silent=True)
+        else GetDocumentSectionInput()
+    )
 
     return GetDocumentSectionsResponse.parse_obj(
         document_service.get_sections_by_path(
